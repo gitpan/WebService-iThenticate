@@ -1,0 +1,14 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+eg/doc_submit.pl
+eg/doc_check.pl
+eg/get_report.pl
+t/WebService-iThenticate-Client.t
+t/WebService-iThenticate-Request.t
+t/WebService-iThenticate-Response.t
+lib/WebService/iThenticate/Client.pm
+lib/WebService/iThenticate/Request.pm
+lib/WebService/iThenticate/Response.pm
+META.yml                                 Module meta-data (added by MakeMaker)

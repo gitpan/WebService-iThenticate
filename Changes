@@ -1,0 +1,8 @@
+Revision history for Perl extension WebService::iThenticate.
+
+0.10 Thu Oct 23 15:57:55 2008 PST
+
+    - some small bugfixes identified in previous libraries
+    - libraries migrated from iThenticate::API::Client 0.09 and
+      iThenticate::API::Request 0.07
+
