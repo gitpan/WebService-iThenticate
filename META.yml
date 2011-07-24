@@ -1,11 +1,11 @@
 --- #YAML:1.0
 name:                WebService-iThenticate
-version:             0.1
+version:             0.11
 abstract:            A library to access the iThenticate web service
 license:             ~
 author:              
     - Fred Moyer <fred@iparadigms.com>
-generated_by:        ExtUtils::MakeMaker version 6.44
+generated_by:        ExtUtils::MakeMaker version 6.42
 distribution_type:   module
 requires:     
     Crypt::SSLeay:                 0.57

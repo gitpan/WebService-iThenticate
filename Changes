@@ -1,5 +1,8 @@
 Revision history for Perl extension WebService::iThenticate.
 
+0.11 Sat Jul 23 2011
+    - add tii for admissions example program
+
 0.10 Thu Oct 23 15:57:55 2008 PST
 
     - some small bugfixes identified in previous libraries

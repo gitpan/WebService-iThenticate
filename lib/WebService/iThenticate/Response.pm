@@ -3,7 +3,7 @@ package WebService::iThenticate::Response;
 use strict;
 use warnings;
 
-our $VERSION = 0.07;
+our $VERSION = 0.11;
 
 =head1 NAME
 
@@ -11,7 +11,7 @@ WebService::iThenticate::Response - manipulate response objects for the WebServi
 
 =head1 SYNOPSIS
 
- # make the request u
+ # make the request
  $response = $ithenticate_api_client->login;
 
  # check for any errors
@@ -466,7 +466,11 @@ Fred Moyer <fred@turnitin.com>
 
 =head1 COPYRIGHT
 
-Copyright 2008 iParadigms LLC
+Copyright (C) (2011) iParadigms, LLC.  All rights reserved.
+
+=head1 LICENSE
+
+This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself, either Perl version 5.8.8 or, at your option, any later version of Perl 5 you may have available.
 
 =cut
 
