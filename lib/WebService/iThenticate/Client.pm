@@ -3,7 +3,7 @@ package WebService::iThenticate::Client;
 use strict;
 use warnings;
 
-our $VERSION = 0.11;
+our $VERSION = 0.12;
 
 use constant DEFAULT_URL => 'https://test.api.ithenticate.com:443/rpc';    ## no critic
 

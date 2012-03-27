@@ -12,4 +12,6 @@ t/WebService-iThenticate-Response.t
 lib/WebService/iThenticate/Client.pm
 lib/WebService/iThenticate/Request.pm
 lib/WebService/iThenticate/Response.pm
-META.yml                                 Module meta-data (added by MakeMaker)
+lib/RPC/XML/Client.pm
+META.yml                                 Module YAML meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)

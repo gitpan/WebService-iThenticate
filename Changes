@@ -1,5 +1,9 @@
 Revision history for Perl extension WebService::iThenticate.
 
+0.12 Mar 26 2011
+    - include embedded RPC-XML client library with fix for
+        https://rt.cpan.org/Public/Bug/Display.html?id=53448
+
 0.11 Sat Jul 23 2011
     - add tii for admissions example program
 
