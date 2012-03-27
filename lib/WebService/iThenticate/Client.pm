@@ -3,7 +3,7 @@ package WebService::iThenticate::Client;
 use strict;
 use warnings;
 
-our $VERSION = 0.12;
+our $VERSION = 0.13;
 
 use constant DEFAULT_URL => 'https://test.api.ithenticate.com:443/rpc';    ## no critic
 
@@ -11,6 +11,8 @@ use URI;
 use RPC::XML::Client;
 use WebService::iThenticate::Request;
 use WebService::iThenticate::Response;
+
+local $RPC::XML::Client::COMPRESSION_AVAILABLE = q{};
 
 =head1 NAME
 

@@ -1,6 +1,10 @@
 Revision history for Perl extension WebService::iThenticate.
 
-0.12 Mar 26 2011
+0.13 Mar 26 2012
+    - disable compression instead of bundling patched rpc client, thanks to
+      Christoph Jokubonis for the spot
+
+0.12 Mar 26 2012
     - include embedded RPC-XML client library with fix for
         https://rt.cpan.org/Public/Bug/Display.html?id=53448
 

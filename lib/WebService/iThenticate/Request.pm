@@ -7,7 +7,7 @@ use RPC::XML;
 
 $RPC::XML::ENCODING = 'UTF-8';
 
-our $VERSION = 0.12;
+our $VERSION = 0.13;
 
 =head1 NAME
 
