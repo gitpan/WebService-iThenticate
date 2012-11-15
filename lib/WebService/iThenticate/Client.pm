@@ -3,16 +3,14 @@ package WebService::iThenticate::Client;
 use strict;
 use warnings;
 
-our $VERSION = 0.13;
+our $VERSION = 0.15;
 
-use constant DEFAULT_URL => 'https://test.api.ithenticate.com:443/rpc';    ## no critic
+use constant DEFAULT_URL => 'https://test.api.ithenticate.com/rpc';    ## no critic
 
 use URI;
 use RPC::XML::Client;
 use WebService::iThenticate::Request;
 use WebService::iThenticate::Response;
-
-local $RPC::XML::Client::COMPRESSION_AVAILABLE = q{};
 
 =head1 NAME
 
@@ -35,14 +33,15 @@ WebService::iThenticate::Client - a client class to access the iThenticate servi
 
  # submit a document
  $response = $client->add_document({
-     title           => 'Moby Dick',
-     author_first    => 'Herman',
-     author_last     => 'Melville',
-     filename        => 'moby_dick.doc',
-     folder          => 72,    # folder id
-     submit_to       => 1,     # 1 => 'Generate Report Only'
-     upload          => `cat moby_dick.doc`, # binary content of document
+     title               => 'Moby Dick',
+     author_first        => 'Herman',
+     author_last         => 'Melville',
+     filename            => 'moby_dick.doc',
+     folder              => 72,    # folder id
+     submit_to           => 1,     # 1 => 'Generate Report Only'
+     upload              => `cat moby_dick.doc`, # binary content of document
                                              # the client module will base64 and chunk it
+     non_blocking_upload => 1,
  });
 
  # get the newly created document id
@@ -88,6 +87,10 @@ sub new {
     # need some auth credentials to proceed
     die 'username needed to create new client object' unless $args_ref->{username};
     die 'password needed to create new client object' unless $args_ref->{password};
+
+    # don't allow RPC::XML::Client to make use of Compress::Zlib
+    # Bill Moseley: related to https://rt.cpan.org/Public/Bug/Display.html?id=53448
+    local $RPC::XML::Client::COMPRESSION_AVAILABLE = q{};
 
     # set defaults
     my $url = $args_ref->{url} || DEFAULT_URL;
@@ -383,7 +386,10 @@ sub trash_folder {
      # options 2 and 3 only available for accounts with private nodes
      submit_to       => 1,     # 1 => 'Generate Report Only'
                                # 2 => 'to Document Repository Only'
-                               # 3 => 'to Document Repository & Generate Report' 
+                               # 3 => 'to Document Repository & Generate Report'
+
+     # use the non-blocking upload option (this method returns faster)
+     non_blocking_upload => 1,
  });
 
  # get the newly created document id

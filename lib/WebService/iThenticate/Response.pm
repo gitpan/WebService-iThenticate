@@ -3,7 +3,7 @@ package WebService::iThenticate::Response;
 use strict;
 use warnings;
 
-our $VERSION = 0.13;
+our $VERSION = 0.15;
 
 =head1 NAME
 

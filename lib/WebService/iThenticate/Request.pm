@@ -7,7 +7,7 @@ use RPC::XML;
 
 $RPC::XML::ENCODING = 'UTF-8';
 
-our $VERSION = 0.13;
+our $VERSION = 0.15;
 
 =head1 NAME
 
@@ -45,13 +45,11 @@ to validate request arguments.
 
 =cut
 
-# note that there is no entry for document.get, that method does not
-# use the same request argument structure as the rest of the methods
-# and must be handled individually
 # we use a simple hash for validation here instead of Params::Validate
 # just to keep the dependencies to a minimum.
 
-our %Validations = (
+# had to no critic this next line; why are we not allowing package variables?
+our %Validations = (    ## no critic
     'document.get'   => { id => 'int' },
     'document.trash' => { id => 'int' },
 
@@ -68,7 +66,8 @@ our %Validations = (
     'group.folders' => { id   => 'int' },
     'group.drop'    => { id   => 'int' },
 
-    'folder.add' => { name => 'string',
+    'folder.add' => {
+        name           => 'string',
         description    => 'string',
         folder_group   => 'int',
         exclude_quotes => 'boolean', },    # add_to_index is optional
@@ -161,7 +160,7 @@ sub validate {
         my $sub = '_' . $validate->{$key};
 
         # validate the argument
-        no strict 'refs';    ## no-critic
+        no strict 'refs';    ## no critic
         $validated{$key} = $sub->( $key, delete $args->{$key} );
     }
 
@@ -221,7 +220,7 @@ Fred Moyer <fred@iparadigms.com>
 
 =head1 COPYRIGHT
 
-Copyright (C) (2011) iParadigms, LLC.  All rights reserved.
+Copyright (C) (2012) iParadigms, LLC.  All rights reserved.
 
 =head1 LICENSE
 

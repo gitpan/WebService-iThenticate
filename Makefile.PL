@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 
-use 5.008008;
 use strict;
 use warnings;
+
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
@@ -12,6 +12,8 @@ WriteMakefile(
         'Crypt::SSLeay' => 0.57,
         'RPC::XML'      => 1.36,
         'URI'           => 1.35 },
-    ABSTRACT => 'A library to access the iThenticate web service',
-    AUTHOR   => 'Fred Moyer <fred@iparadigms.com>',                  ## no critic
+    ABSTRACT  => 'A library to access the iThenticate web service',
+    AUTHOR    => 'Fred Moyer <fred@iparadigms.com>',                                  ## no critic
+    EXE_FILES => [ 'bin/login_check.pl', 'bin/doc_submit.pl', 'bin/folder_list.pl',
+        'bin/get_report.pl', 'bin/doc_check.pl', 'bin/tiifa_api_example.pl', ],
 );
