@@ -1,5 +1,8 @@
 Revision history for Perl extension WebService::iThenticate.
 
+0.16 Fri May 16 2014
+    - password no longer required for user.add
+
 0.15 Thu Nov 15 2012
     - fix version and add 0.13 changes back in. branched dev resulted in 0.14 errors
 

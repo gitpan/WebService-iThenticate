@@ -7,7 +7,7 @@ use RPC::XML;
 
 $RPC::XML::ENCODING = 'UTF-8';
 
-our $VERSION = 0.15;
+our $VERSION = 0.16;
 
 =head1 NAME
 
@@ -55,10 +55,10 @@ our %Validations = (    ## no critic
 
     'report.get' => { id => 'int' },
 
-    'user.add' => { first_name => 'string',
-        last_name => 'string',
-        email     => 'string',
-        password  => 'string', },
+    'user.add' => {
+        first_name => 'string',
+        last_name  => 'string',
+        email      => 'string', },
 
     'user.drop' => { id => 'int' },
 
